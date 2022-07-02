@@ -122,9 +122,12 @@ def subjectChoose(text_to_speech):
                     ts).strftime("%H:%M:%S")
                 Hour, Minute, Second = timeStamp.split(":")
                 # fileName = "Attendance/" + Subject + ".csv"
-                path = os.path.join(attendance_path, Subject)
+                print(Subject)
+                # path = os.path.join(attendance_path, Subject)
+                path = attendance_path + '/'+subject
+                print(path)
                 fileName = (
-                    f"{path}/"
+                    path+'/'
                     + Subject
                     + "_"
                     + date
@@ -138,7 +141,9 @@ def subjectChoose(text_to_speech):
                 )
                 attendance = attendance.drop_duplicates(
                     ["Enrollment"], keep="first")
+                print(fileName)
                 print(attendance)
+
                 attendance.to_csv(fileName, index=False)
 
                 m = "Attendance Filled Successfully of " + Subject
