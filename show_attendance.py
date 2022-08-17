@@ -26,7 +26,6 @@ def subjectchoose(text_to_speech):
         newdf["Attendance"] = 0
         for i in range(len(newdf)):
             newdf["Attendance"].iloc[i] = str(int(round(newdf.iloc[i, 2:-1].mean() * 100)))+'%'
-            #newdf.sort_values(by=['Enrollment'],inplace=True)
         newdf.to_csv("attendance.csv", index=False)
 
         root = tkinter.Tk()
@@ -58,18 +57,12 @@ def subjectchoose(text_to_speech):
         print(newdf)
 
     subject = Tk()
-    # windo.iconbitmap("AMS.ico")
     subject.title("Subject...")
     subject.geometry("580x320")
     subject.resizable(0, 0)
     subject.configure(background="black")
-    # subject_logo = Image.open("UI_Image/0004.png")
-    # subject_logo = subject_logo.resize((50, 47), Image.ANTIALIAS)
-    # subject_logo1 = ImageTk.PhotoImage(subject_logo)
     titl = tk.Label(subject, bg="black", relief=RIDGE, bd=10, font=("arial", 30))
     titl.pack(fill=X)
-    # l1 = tk.Label(subject, image=subject_logo1, bg="black",)
-    # l1.place(x=100, y=10)
     titl = tk.Label(
         subject,
         text="Which Subject of Attendance?",

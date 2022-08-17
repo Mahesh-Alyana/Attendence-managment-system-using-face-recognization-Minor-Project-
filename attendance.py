@@ -17,11 +17,6 @@ import takeImage
 import trainImage
 import automaticAttedance
 
-# engine = pyttsx3.init()
-# engine.say("Welcome!")
-# engine.say("Please browse through your options..")
-# engine.runAndWait()
-
 
 def text_to_speech(user_text):
     engine = pyttsx3.init()
@@ -42,12 +37,9 @@ attendance_path = "D:\\Programming\\Attendence-managment-system-using-face-recog
 
 window = Tk()
 bgd = PhotoImage(file="./UI_Image/bgd.png")
-# bgd = Image.open("./UI_Image/image26.png")   #take
-# bgd = bgd.resize((1920,1080),Image.ANTIALIAS)
 label1 = Label( window, image = bgd)
 label1.place(x = 0, y = 0)
 window.title("Face recognizer")
-# window.geometry("1280x720")
 window.geometry("1920x1080")
 dialog_title = "QUIT"
 dialog_text = "Are you sure want to close?"

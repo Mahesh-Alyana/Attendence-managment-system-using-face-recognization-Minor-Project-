@@ -107,13 +107,10 @@ def subjectChoose(text_to_speech):
 
                 ts = time.time()
                 print(aa)
-                # attendance["date"] = date
-                # attendance["Attendance"] = "P"
                 attendance[date] = 1
                 date = datetime.datetime.fromtimestamp(ts).strftime("%Y-%m-%d")
                 timeStamp = datetime.datetime.fromtimestamp(ts).strftime("%H:%M:%S")
                 Hour, Minute, Second = timeStamp.split(":")
-                # fileName = "Attendance/" + Subject + ".csv"
                 path = os.path.join(attendance_path, Subject)
                 fileName = (
                     f"{path}/"
